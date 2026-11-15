@@ -10,7 +10,7 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Lamplit">
+  <meta property="og:site_name" content="GTA VI Launch Answers">
   <meta property="og:title" content="GTA VI Launch Answers | Release Date, Unlock Times, Price, Platforms | Lamplit">
   <meta property="og:description" content="GTA VI launches Thursday, November 19, 2026. Live countdown, unlock times in your timezone, and straight answers on price, platforms, PC, preload and early access.">
   <meta property="og:url" content="https://gta6-launch-answers.vercel.app/">
@@ -22,15 +22,15 @@
   <meta name="twitter:description" content="GTA VI launches Thursday, November 19, 2026. Live countdown, unlock times in your timezone, and straight answers on price, platforms, PC, preload and early access.">
   <meta name="twitter:url" content="https://gta6-launch-answers.vercel.app/">
 
-  <meta name="theme-color" content="#0A0E1E">
+  <meta name="theme-color" content="#0B0D11">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <!-- Google Fonts: Outfit (Display) + Plus Jakarta Sans (Body) -->
+  <!-- Google Fonts: Space Grotesk + Inter + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- FAQPage Structured Data (matches visible cards word for word) -->
+  <!-- FAQPage Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -122,20 +122,23 @@
 
   <style>
     :root {
-      --bg-deep: #0A0E1E;
-      --bg-darker: #060914;
-      --bg-surface: #11172F;
-      --bg-surface-elevated: #161E3C;
-      --text-cream: #F2EAD8;
-      --text-muted: #B9B2A3;
-      --accent-gold: #E8B03C;
-      --accent-gold-soft: rgba(232, 176, 60, 0.16);
-      --border-subtle: rgba(242, 234, 216, 0.12);
-      --border-gold: rgba(232, 176, 60, 0.42);
-      --vice-gradient: linear-gradient(125deg, #FF2E93 0%, #9D4EDD 48%, #E8B03C 100%);
-      --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
-      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      --max-w: 980px;
+      /* Editorial dark palette — no neon purple/magenta AI blobs */
+      --bg-canvas: #0B0D11;
+      --bg-panel: #11141B;
+      --bg-panel-hover: #161A23;
+      --bg-input: #0E1117;
+      --border-line: #212631;
+      --border-strong: #2E3545;
+      --text-primary: #F2EFE9;
+      --text-secondary: #9CA3B0;
+      --text-dim: #68707E;
+      --accent-amber: #E5A93C;
+      --accent-amber-dim: rgba(229, 169, 60, 0.12);
+      --status-confirmed: #34D399;
+      --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+      --max-w: 1040px;
     }
 
     *, *::before, *::after {
@@ -145,10 +148,10 @@
     }
 
     html {
-      background-color: var(--bg-deep);
-      color: var(--text-cream);
-      font-family: var(--font-body);
-      line-height: 1.6;
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.55;
       scroll-behavior: smooth;
       scroll-padding-top: 68px;
       -webkit-text-size-adjust: 100%;
@@ -156,384 +159,391 @@
     }
 
     body {
-      background-color: var(--bg-deep);
-      background-image:
-        radial-gradient(ellipse 80% 45% at 50% -5%, rgba(255, 46, 147, 0.18), transparent 70%),
-        radial-gradient(ellipse 65% 40% at 85% 15%, rgba(157, 78, 221, 0.14), transparent 65%),
-        radial-gradient(ellipse 60% 35% at 15% 20%, rgba(232, 176, 60, 0.10), transparent 65%),
-        linear-gradient(180deg, #0A0E1E 0%, #080B18 60%, #060914 100%);
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
       min-height: 100vh;
       overflow-x: hidden;
-      position: relative;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Subtle CSS-only Vice City horizon lines */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(242, 234, 216, 0.022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(242, 234, 216, 0.022) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: radial-gradient(circle at 50% 20%, rgba(0, 0, 0, 0.65), transparent 75%);
-      -webkit-mask-image: radial-gradient(circle at 50% 20%, rgba(0, 0, 0, 0.65), transparent 75%);
-      z-index: 0;
+    a {
+      color: inherit;
     }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes pulseTick {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-      100% { transform: scale(1); }
-    }
-
-    /* Sticky Mini Countdown Bar */
-    .sticky-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 52px;
-      background: rgba(10, 14, 30, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-gold);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 14px;
-      transform: translateY(-105%);
-      opacity: 0;
-      pointer-events: none;
-      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.28s ease;
-    }
-
-    .sticky-bar.is-visible {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .sticky-bar-inner {
+    .container {
       width: 100%;
       max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top Site Header & Sticky Mini Countdown */
+    .site-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 56px;
+      background: rgba(11, 13, 17, 0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .topbar-inner {
+      height: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .site-id {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+    }
+
+    .site-id-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent-amber);
+      border: 1px solid rgba(229, 169, 60, 0.35);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .topbar-nav {
+      display: none;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .topbar-nav a {
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.15s ease;
+    }
+
+    .topbar-nav a:hover {
+      color: var(--text-primary);
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
       gap: 10px;
     }
 
-    .sticky-label {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 0.88rem;
-      letter-spacing: 0.04em;
-      color: var(--text-cream);
+    /* Sticky Mini Countdown inside top bar when scrolled past hero */
+    .sticky-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 10px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-line);
+      border-radius: 6px;
+      font-size: 0.78rem;
+      opacity: 0;
+      transform: translateY(-4px);
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .sticky-bar.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .sticky-bar-title {
+      font-weight: 600;
+      color: var(--text-secondary);
       white-space: nowrap;
+    }
+
+    .sticky-timer {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--accent-amber);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    /* Corner Icon Link to Bottom Info Section */
+    .corner-icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0 10px;
+      border-radius: 6px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-line);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    }
+
+    .corner-icon-link:hover,
+    .corner-icon-link:focus-visible {
+      border-color: var(--accent-amber);
+      color: var(--text-primary);
+      background: var(--bg-panel-hover);
+      outline: none;
+    }
+
+    .corner-icon-mark {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background: #1A1E28;
+      border: 1px solid rgba(229, 169, 60, 0.45);
+      color: var(--accent-amber);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.72rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 44px 0 40px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .hero-meta-line {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .sticky-dot {
-      width: 8px;
-      height: 8px;
+    .live-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: var(--accent-gold);
-      box-shadow: 0 0 10px var(--accent-gold);
-      flex-shrink: 0;
-    }
-
-    .sticky-timer {
-      font-variant-numeric: tabular-nums;
-      font-weight: 700;
-      font-size: 0.88rem;
-      color: var(--accent-gold);
-      background: rgba(232, 176, 60, 0.12);
-      border: 1px solid rgba(232, 176, 60, 0.32);
-      padding: 4px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
-      min-width: 158px;
-      text-align: center;
-    }
-
-    /* Main Container */
-    .container {
-      width: 100%;
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 16px;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 40px 0 36px;
-      text-align: center;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .brand-bar {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 6px 16px;
-      border-radius: 999px;
-      background: rgba(17, 23, 47, 0.85);
-      border: 1px solid var(--border-gold);
-      margin-bottom: 22px;
-    }
-
-    .brand-mark {
-      width: 22px;
-      height: 22px;
-      border-radius: 6px;
-      background: var(--bg-deep);
-      border: 1px solid var(--accent-gold);
-      color: var(--accent-gold);
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 0.78rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .brand-text {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 0.82rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent-gold);
+      background-color: var(--accent-amber);
+      display: inline-block;
     }
 
     .hero h1 {
       font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(2rem, 6vw, 3.85rem);
+      font-weight: 700;
+      font-size: clamp(2rem, 5.2vw, 3.5rem);
       line-height: 1.08;
-      letter-spacing: -0.02em;
-      color: var(--text-cream);
-      margin: 0 auto 16px;
-      max-width: 18ch;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      max-width: 22ch;
+      margin-bottom: 14px;
     }
 
-    .headline-gradient {
-      background: var(--vice-gradient);
-      background-size: 200% 200%;
-      animation: gradientShift 9s ease infinite;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      display: inline-block;
+    .hero h1 .date-highlight {
+      color: var(--accent-amber);
     }
 
     .hero-sub {
-      font-size: clamp(1rem, 2.4vw, 1.18rem);
-      color: var(--text-muted);
-      max-width: 640px;
-      margin: 0 auto 28px;
-      font-weight: 400;
+      font-size: clamp(0.98rem, 2vw, 1.12rem);
+      color: var(--text-secondary);
+      max-width: 66ch;
+      margin-bottom: 32px;
     }
 
-    /* Countdown Grid - Fixed dimensions to guarantee 0 CLS */
-    .countdown-wrap {
-      max-width: 720px;
-      margin: 0 auto 22px;
+    /* Countdown Ledger — Architectural, mechanical tabular readout */
+    .countdown-panel {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
     }
 
     .countdown-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border-line);
     }
 
     .countdown-cell {
-      background: linear-gradient(180deg, rgba(22, 30, 60, 0.92) 0%, rgba(14, 19, 40, 0.96) 100%);
-      border: 1px solid var(--border-gold);
-      border-radius: 14px;
-      height: 108px;
+      padding: 22px 10px;
+      text-align: center;
+      border-right: 1px solid var(--border-line);
+      height: 116px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 10px 6px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-      position: relative;
-      overflow: hidden;
     }
 
-    .countdown-cell::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 15%;
-      right: 15%;
-      height: 2px;
-      background: var(--vice-gradient);
-      opacity: 0.75;
+    .countdown-cell:last-child {
+      border-right: none;
     }
 
     .countdown-digit {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(1.65rem, 5.5vw, 2.85rem);
-      line-height: 1.05;
-      color: var(--text-cream);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: clamp(1.75rem, 5vw, 2.9rem);
+      line-height: 1;
+      color: var(--text-primary);
       font-variant-numeric: tabular-nums;
-      letter-spacing: -0.02em;
-      min-height: 1.1em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .countdown-digit.tick {
-      animation: pulseTick 0.25s ease;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
     }
 
     .countdown-unit {
+      font-family: var(--font-mono);
       font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent-gold);
-      margin-top: 6px;
+      color: var(--text-secondary);
+    }
+
+    .countdown-bar-footer {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: rgba(14, 17, 23, 0.7);
     }
 
     .tz-caption {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
     }
 
     .tz-caption strong {
-      color: var(--text-cream);
-      font-weight: 600;
-    }
-
-    /* Add to Calendar Button */
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
     }
 
     .btn-calendar {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 48px;
-      padding: 12px 24px;
-      border-radius: 12px;
-      background: rgba(232, 176, 60, 0.14);
-      border: 1px solid var(--accent-gold);
-      color: var(--text-cream);
-      font-weight: 700;
-      font-size: 0.95rem;
+      gap: 8px;
+      min-height: 44px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      background: #191E28;
+      border: 1px solid var(--border-strong);
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      font-weight: 600;
       text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      transition: border-color 0.15s ease, background 0.15s ease;
     }
 
     .btn-calendar:hover,
     .btn-calendar:focus-visible {
-      background: rgba(232, 176, 60, 0.26);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(232, 176, 60, 0.2);
+      border-color: var(--accent-amber);
+      background: #1F2532;
       outline: none;
     }
 
     .btn-calendar svg {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       fill: currentColor;
-      color: var(--accent-gold);
+      color: var(--accent-amber);
       flex-shrink: 0;
     }
 
-    /* Section Defaults */
+    /* Section Layout */
     .section {
-      padding: 44px 0;
-      border-bottom: 1px solid var(--border-subtle);
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border-line);
     }
 
-    .section-header {
-      margin-bottom: 22px;
-    }
-
-    .section-eyebrow {
-      font-size: 0.76rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent-gold);
-      margin-bottom: 6px;
-      display: block;
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
     }
 
     .section h2 {
       font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(1.45rem, 4vw, 2.15rem);
-      line-height: 1.18;
-      color: var(--text-cream);
-      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
     }
 
-    .section-lead {
-      color: var(--text-muted);
-      font-size: 0.96rem;
-      max-width: 720px;
+    .section-desc {
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+      max-width: 68ch;
     }
 
-    /* World Table Section */
-    .tz-notice-banner {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-gold);
-      border-left: 4px solid var(--accent-gold);
-      border-radius: 10px;
-      padding: 12px 16px;
-      margin-bottom: 18px;
-      font-size: 0.9rem;
-      color: var(--text-cream);
+    /* World Table */
+    .tz-Readout-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 8px;
+      padding: 12px 16px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-line);
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
     }
 
     .tz-badge {
-      background: var(--accent-gold-soft);
-      color: var(--accent-gold);
-      font-weight: 700;
+      font-family: var(--font-mono);
       font-size: 0.8rem;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+      color: var(--accent-amber);
+      background: var(--accent-amber-dim);
+      padding: 3px 8px;
+      border-radius: 4px;
     }
 
-    .world-table-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
+    .world-table-wrap {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-line);
+      border-radius: 0 0 8px 8px;
       overflow: hidden;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
     }
 
     .world-table {
@@ -544,20 +554,21 @@
     }
 
     .world-table th {
-      background: rgba(6, 9, 20, 0.65);
-      color: var(--accent-gold);
-      font-size: 0.74rem;
-      font-weight: 700;
+      background: #0E1117;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 13px 14px;
-      border-bottom: 1px solid var(--border-subtle);
+      letter-spacing: 0.06em;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-line);
     }
 
     .world-table td {
-      padding: 13px 14px;
-      border-bottom: 1px solid rgba(242, 234, 216, 0.07);
-      font-size: 0.92rem;
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--border-line);
+      font-size: 0.9rem;
       vertical-align: middle;
     }
 
@@ -566,223 +577,222 @@
     }
 
     .world-table tbody tr:hover {
-      background: rgba(232, 176, 60, 0.05);
+      background: var(--bg-panel-hover);
     }
 
     .city-name {
-      font-weight: 700;
-      color: var(--text-cream);
+      font-weight: 600;
+      color: var(--text-primary);
       display: block;
     }
 
     .city-zone-sub {
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--text-dim);
       display: block;
     }
 
+    .local-midnight-cell {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
     .converted-time {
+      font-family: var(--font-mono);
       font-weight: 700;
-      color: var(--accent-gold);
+      font-size: 0.92rem;
+      color: var(--accent-amber);
       display: block;
     }
 
     .converted-date {
-      font-size: 0.82rem;
-      color: var(--text-cream);
-      opacity: 0.9;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
       display: block;
     }
 
-    /* Search & Answers Section */
-    .search-box-wrap {
-      margin-bottom: 16px;
-      position: relative;
+    /* Search & Filter Controls */
+    .search-toolbar {
+      margin-bottom: 20px;
     }
 
-    .search-label {
-      display: block;
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .search-input-container {
+    .search-input-wrap {
       position: relative;
       display: flex;
       align-items: center;
+      margin-bottom: 12px;
     }
 
     .search-icon {
       position: absolute;
-      left: 16px;
-      width: 18px;
-      height: 18px;
-      color: var(--accent-gold);
+      left: 14px;
+      width: 17px;
+      height: 17px;
+      color: var(--text-secondary);
       pointer-events: none;
     }
 
     .search-input {
       width: 100%;
-      min-height: 50px;
-      padding: 12px 44px 12px 46px;
-      border-radius: 12px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-gold);
-      color: var(--text-cream);
-      font-family: var(--font-body);
-      font-size: 1rem;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      min-height: 48px;
+      padding: 10px 44px 10px 42px;
+      border-radius: 6px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-strong);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      transition: border-color 0.15s ease;
     }
 
     .search-input::placeholder {
-      color: rgba(185, 178, 163, 0.68);
+      color: var(--text-dim);
     }
 
     .search-input:focus {
       outline: none;
-      border-color: var(--accent-gold);
-      box-shadow: 0 0 0 3px rgba(232, 176, 60, 0.22);
+      border-color: var(--accent-amber);
     }
 
     .search-clear-btn {
       position: absolute;
-      right: 8px;
+      right: 6px;
       min-width: 44px;
       min-height: 44px;
       border: none;
       background: transparent;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       font-size: 1.2rem;
       cursor: pointer;
       display: none;
       align-items: center;
       justify-content: center;
-      border-radius: 8px;
     }
 
     .search-clear-btn.is-active {
       display: inline-flex;
     }
 
-    .search-clear-btn:hover {
-      color: var(--text-cream);
-    }
-
-    .topic-pills {
+    .filter-tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 22px;
+      gap: 6px;
     }
 
     .topic-pill {
       min-height: 44px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      font-family: var(--font-body);
-      font-size: 0.83rem;
-      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-line);
+      color: var(--text-secondary);
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 500;
       cursor: pointer;
-      transition: all 0.18s ease;
+      transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
     }
 
     .topic-pill:hover,
     .topic-pill.is-active {
-      background: var(--accent-gold-soft);
-      border-color: var(--accent-gold);
-      color: var(--text-cream);
+      border-color: var(--accent-amber);
+      color: var(--text-primary);
+      background: var(--bg-panel-hover);
     }
 
+    /* Answer Cards — Clean Editorial Ledger */
     .answers-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .answer-card {
-      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(14, 19, 40, 0.95) 100%);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      padding: 20px;
-      transition: transform 0.25s ease, border-color 0.25s ease, opacity 0.35s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       gap: 12px;
     }
 
+    .answer-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-line);
+      border-radius: 8px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: border-color 0.15s ease;
+    }
+
     .answer-card:hover {
-      border-color: var(--border-gold);
-      transform: translateY(-2px);
+      border-color: var(--border-strong);
     }
 
     .answer-card[hidden] {
       display: none !important;
     }
 
-    .answer-card.fade-ready {
-      opacity: 0.88;
-      transform: translateY(8px);
+    .answer-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
     }
 
-    .answer-card.fade-in {
-      opacity: 1;
-      transform: translateY(0);
+    .answer-num {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      padding-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .answer-content {
+      flex: 1;
     }
 
     .answer-card h3 {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1.18rem;
+      font-size: 1.12rem;
       line-height: 1.3;
-      color: var(--text-cream);
+      color: var(--text-primary);
+      margin-bottom: 8px;
     }
 
     .answer-body {
-      font-size: 1rem;
-      color: var(--text-cream);
-      opacity: 0.94;
-      line-height: 1.62;
+      font-size: 0.95rem;
+      color: #D5D9E2;
+      line-height: 1.6;
     }
 
     .answer-footer {
       padding-top: 12px;
-      border-top: 1px solid rgba(242, 234, 216, 0.08);
+      border-top: 1px solid var(--border-line);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
     }
 
     .check-date {
-      font-weight: 600;
-      color: var(--text-muted);
+      color: var(--text-dim);
     }
 
     .status-note {
-      color: var(--accent-gold);
-      font-weight: 600;
-      background: rgba(232, 176, 60, 0.1);
-      border: 1px solid rgba(232, 176, 60, 0.28);
-      padding: 3px 9px;
-      border-radius: 6px;
+      color: var(--text-secondary);
+    }
+
+    .status-note.confirmed {
+      color: var(--status-confirmed);
     }
 
     .empty-search-state {
-      background: var(--bg-surface);
-      border: 1px dashed var(--border-gold);
-      border-radius: 14px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-line);
+      border-radius: 8px;
       padding: 28px 20px;
       text-align: center;
-      margin-top: 8px;
     }
 
     .empty-search-state[hidden] {
@@ -791,25 +801,26 @@
 
     .empty-search-title {
       font-family: var(--font-display);
-      font-size: 1.1rem;
-      color: var(--text-cream);
+      font-size: 1.05rem;
+      color: var(--text-primary);
       margin-bottom: 6px;
     }
 
     .empty-search-sub {
-      color: var(--text-muted);
-      font-size: 0.92rem;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
       margin-bottom: 14px;
     }
 
     .btn-reset-search {
       min-height: 44px;
-      padding: 8px 18px;
-      border-radius: 8px;
-      background: var(--accent-gold-soft);
-      border: 1px solid var(--accent-gold);
-      color: var(--text-cream);
+      padding: 8px 16px;
+      border-radius: 6px;
+      background: #191E28;
+      border: 1px solid var(--border-strong);
+      color: var(--text-primary);
       font-weight: 600;
+      font-size: 0.85rem;
       cursor: pointer;
     }
 
@@ -817,153 +828,207 @@
     .platform-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 12px;
     }
 
     .platform-card {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 68px;
-      padding: 18px 20px;
-      border-radius: 14px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-cream);
+      min-height: 64px;
+      padding: 16px 20px;
+      border-radius: 8px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-line);
       text-decoration: none;
-      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+      transition: border-color 0.15s ease, background 0.15s ease;
     }
 
     .platform-card:hover,
     .platform-card:focus-visible {
-      border-color: var(--accent-gold);
-      background: var(--bg-surface-elevated);
-      transform: translateY(-2px);
+      border-color: var(--accent-amber);
+      background: var(--bg-panel-hover);
       outline: none;
     }
 
     .platform-name {
       font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1.15rem;
-      color: var(--text-cream);
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: var(--text-primary);
       display: block;
     }
 
     .platform-sub {
-      font-size: 0.84rem;
-      color: var(--text-muted);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
     }
 
     .platform-arrow {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent-amber);
+      padding: 8px 10px;
+      border: 1px solid var(--border-line);
+      border-radius: 6px;
+      background: #0E1117;
+    }
+
+    /* Bottom Info & Channel Section (#lamplit) */
+    .bottom-publisher-section {
+      padding: 48px 0 56px;
+    }
+
+    .publisher-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-line);
+      border-radius: 8px;
+      padding: 28px 24px;
+      margin-bottom: 24px;
+    }
+
+    .publisher-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .publisher-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .publisher-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      background: #0E1117;
+      border: 1px solid rgba(229, 169, 60, 0.5);
+      color: var(--accent-amber);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 1rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: var(--accent-gold-soft);
-      color: var(--accent-gold);
+    }
+
+    .publisher-title {
+      font-family: var(--font-display);
       font-weight: 700;
-      flex-shrink: 0;
+      font-size: 1.1rem;
+      color: var(--text-primary);
     }
 
-    /* Channel CTA Section */
-    .cta-box {
-      background: linear-gradient(180deg, rgba(22, 30, 60, 0.9) 0%, rgba(10, 14, 30, 0.98) 100%);
-      border: 1px solid var(--border-gold);
-      border-radius: 18px;
-      padding: 28px 20px;
-      text-align: center;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
+    .publisher-handle {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      display: block;
     }
 
-    .btn-cta-gradient {
+    .publisher-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .publisher-link-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 44px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      background: #0E1117;
+      border: 1px solid var(--border-line);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .publisher-link-item:hover {
+      border-color: var(--accent-amber);
+      color: var(--text-primary);
+    }
+
+    .btn-cta-channel {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       width: 100%;
-      min-height: 56px;
-      padding: 16px 24px;
-      border-radius: 12px;
-      background: var(--vice-gradient);
-      background-size: 200% 200%;
-      animation: gradientShift 8s ease infinite;
-      color: #060914;
+      min-height: 52px;
+      padding: 14px 20px;
+      border-radius: 6px;
+      background: var(--accent-amber);
+      color: #0B0D11;
       font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(1.05rem, 3vw, 1.25rem);
-      letter-spacing: 0.01em;
+      font-weight: 700;
+      font-size: 1.02rem;
       text-decoration: none;
-      box-shadow: 0 10px 28px rgba(255, 46, 147, 0.28);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: background 0.15s ease;
     }
 
-    .btn-cta-gradient:hover,
-    .btn-cta-gradient:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba(232, 176, 60, 0.36);
+    .btn-cta-channel:hover,
+    .btn-cta-channel:focus-visible {
+      background: #F0B64D;
       outline: none;
     }
 
     .cta-subline {
-      margin-top: 14px;
-      font-size: 0.98rem;
-      color: var(--text-cream);
-      font-weight: 500;
-    }
-
-    /* Footer */
-    .site-footer {
-      padding: 36px 0 48px;
+      margin-top: 12px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
       text-align: center;
     }
 
     .legal-text {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      max-width: 720px;
-      margin: 0 auto;
-      line-height: 1.65;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      line-height: 1.6;
     }
 
-    /* Responsive Adjustments for 360px phones up to desktop */
-    @media (max-width: 420px) {
-      .container {
+    /* Mobile 360px & Desktop Responsive */
+    @media (max-width: 440px) {
+      .container,
+      .topbar-inner {
         padding: 0 12px;
       }
-      .countdown-grid {
-        gap: 8px;
-      }
       .countdown-cell {
-        height: 94px;
-        border-radius: 10px;
+        height: 92px;
+        padding: 14px 4px;
       }
       .world-table th,
       .world-table td {
-        padding: 10px 10px;
-        font-size: 0.84rem;
-      }
-      .sticky-label {
+        padding: 10px 8px;
         font-size: 0.8rem;
       }
-      .sticky-timer {
-        font-size: 0.8rem;
-        min-width: 142px;
-        padding: 4px 8px;
+      .local-midnight-cell {
+        font-size: 0.74rem;
+      }
+      .sticky-bar-title {
+        display: none;
       }
     }
 
-    @media (min-width: 680px) {
-      .hero {
-        padding: 64px 0 52px;
+    @media (min-width: 720px) {
+      .topbar-nav {
+        display: flex;
       }
-      .countdown-grid {
-        gap: 16px;
+      .hero {
+        padding: 60px 0 48px;
       }
       .countdown-cell {
-        height: 132px;
+        height: 134px;
       }
       .answers-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -971,62 +1036,70 @@
       .platform-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .cta-box {
-        padding: 36px 32px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Sticky Mini Countdown (Feature 5) -->
-  <div id="sticky-bar" class="sticky-bar" role="region" aria-label="Sticky launch countdown">
-    <div class="sticky-bar-inner">
-      <span class="sticky-label">
-        <span class="sticky-dot" aria-hidden="true"></span>
-        <span>GTA VI — Nov 19</span>
-      </span>
-      <span id="sticky-timer" class="sticky-timer" aria-live="off">--d --h --m --s</span>
+  <!-- Top Navigation & Sticky Mini Countdown + Corner Icon Link -->
+  <header class="site-topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <a href="#hero-section" class="site-id">
+          <span>GTA VI</span>
+          <span class="site-id-tag">19.11.2026</span>
+        </a>
+        <nav class="topbar-nav" aria-label="Page sections">
+          <a href="#world-clock">Unlock Times</a>
+          <a href="#launch-answers">10 Answers</a>
+          <a href="#platforms">Store Links</a>
+        </nav>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Sticky Mini Countdown (becomes visible when hero scrolls out of view) -->
+        <div id="sticky-bar" class="sticky-bar" role="region" aria-label="Sticky launch countdown">
+          <span class="sticky-bar-title">GTA VI — Nov 19</span>
+          <span id="sticky-timer" class="sticky-timer">--d --h --m --s</span>
+        </div>
+
+        <!-- Subtle Corner Icon button that jumps to Lamplit details & links at bottom -->
+        <a href="#lamplit" class="corner-icon-link" title="Lamplit channel &amp; page details">
+          <span class="corner-icon-mark" aria-hidden="true">L</span>
+          <span>Lamplit</span>
+        </a>
+      </div>
     </div>
-  </div>
+  </header>
 
   <main class="container">
-    <!-- Hero Section (Features 1, 2, 3) -->
-    <header id="hero-section" class="hero">
-      <div class="brand-bar">
-        <span class="brand-mark" aria-hidden="true">L</span>
-        <span class="brand-text">LAMPLIT</span>
+    <!-- Hero Section -->
+    <section id="hero-section" class="hero">
+      <div class="hero-meta-line">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>WORLDWIDE CONSOLE RELEASE · PS5 &amp; XBOX SERIES X|S</span>
       </div>
 
       <h1 id="hero-headline">
-        GTA VI Launches <span class="headline-gradient">Thursday, November 19, 2026</span>
+        GTA VI launches <span class="date-highlight">Thursday, November 19, 2026</span>
       </h1>
 
       <p class="hero-sub">
-        Grand Theft Auto VI release date countdown to local midnight, world unlock times, and verified launch-night answers.
+        Live countdown to midnight in your timezone, regional unlock hours across 9 global cities, and straight answers on price, platforms, PC, preload, and early access.
       </p>
 
-      <div class="countdown-wrap" aria-label="Countdown to November 19, 2026 at midnight in your timezone">
+      <div class="countdown-panel" aria-label="Countdown to November 19, 2026 at midnight in your timezone">
         <div class="countdown-grid">
           <div class="countdown-cell">
             <span id="cd-days" class="countdown-digit">3</span>
             <span class="countdown-unit">DAYS</span>
           </div>
           <div class="countdown-cell">
-            <span id="cd-hours" class="countdown-digit">2</span>
+            <span id="cd-hours" class="countdown-digit">1</span>
             <span class="countdown-unit">HOURS</span>
           </div>
           <div class="countdown-cell">
-            <span id="cd-minutes" class="countdown-digit">5</span>
+            <span id="cd-minutes" class="countdown-digit">45</span>
             <span class="countdown-unit">MINUTES</span>
           </div>
           <div class="countdown-cell">
@@ -1035,94 +1108,93 @@
           </div>
         </div>
 
-        <p class="tz-caption">
-          Counting down to <strong>Nov 19, 2026, 00:00</strong> in your timezone (<strong id="visitor-tz-hero">Local Time</strong>)
-        </p>
-      </div>
+        <div class="countdown-bar-footer">
+          <p class="tz-caption">
+            Target: <strong>2026-11-19 00:00</strong> in your timezone (<strong id="visitor-tz-hero">Local Time</strong>)
+          </p>
 
-      <div class="hero-actions">
-        <a
-          class="btn-calendar"
-          href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=GTA+VI+launch+day&amp;dates=20261119/20261120&amp;details=Grand+Theft+Auto+VI+launch+day+(Thursday,+November+19,+2026)."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
-          </svg>
-          <span>Add to Google Calendar (Nov 19, 2026)</span>
-        </a>
+          <a
+            class="btn-calendar"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=GTA+VI+launch+day&amp;dates=20261119/20261120&amp;details=Grand+Theft+Auto+VI+launch+day+(Thursday,+November+19,+2026)."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+            </svg>
+            <span>Add to Google Calendar</span>
+          </a>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <!-- World Table Section (Feature 4) -->
-    <section class="section" aria-labelledby="world-table-heading">
-      <div class="section-header">
-        <span class="section-eyebrow">Global GTA VI Unlock Time Tracker</span>
+    <!-- World Table Section -->
+    <section id="world-clock" class="section" aria-labelledby="world-table-heading">
+      <div class="section-head">
         <h2 id="world-table-heading">Midnight, November 19, around the world.</h2>
-        <p class="section-lead">
-          Wondering what time does GTA 6 unlock as November 19 arrives across each region? Every row below computes midnight (00:00 on November 19, 2026) in that city and converts that exact moment into <strong>your own local timezone</strong>.
+        <p class="section-desc">
+          Tracking GTA VI unlock time across regions: each row calculates when midnight (00:00 on November 19, 2026) begins in that city and converts that exact moment into <strong>your own local timezone</strong>.
         </p>
       </div>
 
-      <div class="tz-notice-banner">
-        <span>All converted times in the right column are shown in <strong>your local timezone</strong>:</span>
-        <span id="visitor-tz-table" class="tz-badge">Detecting your timezone…</span>
+      <div class="tz-Readout-bar">
+        <span>Right-hand column converted to your detected timezone:</span>
+        <span id="visitor-tz-table" class="tz-badge">Local Time</span>
       </div>
 
-      <div class="world-table-card">
+      <div class="world-table-wrap">
         <table class="world-table">
           <thead>
             <tr>
               <th scope="col">City</th>
-              <th scope="col">Local Midnight There</th>
-              <th scope="col">In Your Local Timezone</th>
+              <th scope="col">City Midnight</th>
+              <th scope="col">In Your Timezone</th>
             </tr>
           </thead>
           <tbody id="world-table-body">
             <tr data-city="Los Angeles" data-tz="America/Los_Angeles">
               <td><span class="city-name">Los Angeles</span><span class="city-zone-sub">America/Los_Angeles</span></td>
-              <td>Thu, Nov 19, 00:00</td>
+              <td class="local-midnight-cell">Thu, Nov 19 · 00:00</td>
               <td><span class="converted-time">1:00 PM</span><span class="converted-date">Thu, Nov 19, 2026</span></td>
             </tr>
             <tr data-city="New York" data-tz="America/New_York">
               <td><span class="city-name">New York</span><span class="city-zone-sub">America/New_York</span></td>
-              <td>Thu, Nov 19, 00:00</td>
+              <td class="local-midnight-cell">Thu, Nov 19 · 00:00</td>
               <td><span class="converted-time">10:00 AM</span><span class="converted-date">Thu, Nov 19, 2026</span></td>
             </tr>
             <tr data-city="London" data-tz="Europe/London">
               <td><span class="city-name">London</span><span class="city-zone-sub">Europe/London</span></td>
-              <td>Thu, Nov 19, 00:00</td>
+              <td class="local-midnight-cell">Thu, Nov 19 · 00:00</td>
               <td><span class="converted-time">5:00 AM</span><span class="converted-date">Thu, Nov 19, 2026</span></td>
             </tr>
             <tr data-city="Berlin" data-tz="Europe/Berlin">
               <td><span class="city-name">Berlin</span><span class="city-zone-sub">Europe/Berlin</span></td>
-              <td>Thu, Nov 19, 00:00</td>
+              <td class="local-midnight-cell">Thu, Nov 19 · 00:00</td>
               <td><span class="converted-time">4:00 AM</span><span class="converted-date">Thu, Nov 19, 2026</span></td>
             </tr>
             <tr data-city="Dubai" data-tz="Asia/Dubai">
               <td><span class="city-name">Dubai</span><span class="city-zone-sub">Asia/Dubai</span></td>
-              <td>Thu, Nov 19, 00:00</td>
+              <td class="local-midnight-cell">Thu, Nov 19 · 00:00</td>
               <td><span class="converted-time">1:00 AM</span><span class="converted-date">Thu, Nov 19, 2026</span></td>
             </tr>
             <tr data-city="Karachi" data-tz="Asia/Karachi">
               <td><span class="city-name">Karachi</span><span class="city-zone-sub">Asia/Karachi</span></td>
-              <td>Thu, Nov 19, 00:00</td>
+              <td class="local-midnight-cell">Thu, Nov 19 · 00:00</td>
               <td><span class="converted-time">12:00 AM</span><span class="converted-date">Thu, Nov 19, 2026</span></td>
             </tr>
             <tr data-city="Mumbai" data-tz="Asia/Kolkata">
               <td><span class="city-name">Mumbai</span><span class="city-zone-sub">Asia/Kolkata</span></td>
-              <td>Thu, Nov 19, 00:00</td>
+              <td class="local-midnight-cell">Thu, Nov 19 · 00:00</td>
               <td><span class="converted-time">11:30 PM</span><span class="converted-date">Wed, Nov 18, 2026</span></td>
             </tr>
             <tr data-city="Tokyo" data-tz="Asia/Tokyo">
               <td><span class="city-name">Tokyo</span><span class="city-zone-sub">Asia/Tokyo</span></td>
-              <td>Thu, Nov 19, 00:00</td>
+              <td class="local-midnight-cell">Thu, Nov 19 · 00:00</td>
               <td><span class="converted-time">8:00 PM</span><span class="converted-date">Wed, Nov 18, 2026</span></td>
             </tr>
             <tr data-city="Sydney" data-tz="Australia/Sydney">
               <td><span class="city-name">Sydney</span><span class="city-zone-sub">Australia/Sydney</span></td>
-              <td>Thu, Nov 19, 00:00</td>
+              <td class="local-midnight-cell">Thu, Nov 19 · 00:00</td>
               <td><span class="converted-time">6:00 PM</span><span class="converted-date">Wed, Nov 18, 2026</span></td>
             </tr>
           </tbody>
@@ -1130,20 +1202,18 @@
       </div>
     </section>
 
-    <!-- Instant Search & 10 Answer Cards Section (Features 6 & 7) -->
-    <section class="section" aria-labelledby="answers-heading">
-      <div class="section-header">
-        <span class="section-eyebrow">Verified Launch Reference</span>
-        <h2 id="answers-heading">GTA VI Launch Answers: Release Date, Price, Platforms &amp; Preload</h2>
-        <p class="section-lead">
-          Direct answers for players searching when does GTA 6 come out, GTA 6 release date, GTA VI unlock time, GTA 6 platforms, GTA 6 on PC, GTA 6 price, GTA 6 preload, GTA 6 file size, and GTA 6 early access.
+    <!-- 10 Launch Answers Section -->
+    <section id="launch-answers" class="section" aria-labelledby="answers-heading">
+      <div class="section-head">
+        <h2 id="answers-heading">Launch Questions &amp; Verified Answers</h2>
+        <p class="section-desc">
+          Covering GTA 6 release date, when does GTA 6 come out, what time does GTA 6 unlock, GTA 6 platforms, GTA 6 on PC, GTA 6 price, GTA 6 preload, GTA 6 file size, and GTA 6 early access.
         </p>
       </div>
 
-      <div class="search-box-wrap">
-        <label for="answer-search" class="search-label">Filter all 10 launch answers instantly:</label>
-        <div class="search-input-container">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+      <div class="search-toolbar">
+        <div class="search-input-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <circle cx="11" cy="11" r="7"></circle>
             <line x1="20" y1="20" x2="16.2" y2="16.2"></line>
           </svg>
@@ -1151,54 +1221,64 @@
             type="search"
             id="answer-search"
             class="search-input"
-            placeholder="Search release date, PC, price, preload, Vice City, PS5…"
+            placeholder="Filter answers (e.g. release date, PC, $79.99, preload, Vice City)…"
+            aria-label="Filter launch answers"
             autocomplete="off"
           >
           <button type="button" id="search-clear" class="search-clear-btn" aria-label="Clear search">×</button>
         </div>
-      </div>
 
-      <div class="topic-pills" role="group" aria-label="Quick topic filters">
-        <button type="button" class="topic-pill is-active" data-filter="">All (10)</button>
-        <button type="button" class="topic-pill" data-filter="November 19">Release Date</button>
-        <button type="button" class="topic-pill" data-filter="PlayStation 5">Platforms</button>
-        <button type="button" class="topic-pill" data-filter="PC">PC</button>
-        <button type="button" class="topic-pill" data-filter="unlock">Unlock Time</button>
-        <button type="button" class="topic-pill" data-filter="cost">Price</button>
-        <button type="button" class="topic-pill" data-filter="preload">Preload &amp; File Size</button>
-        <button type="button" class="topic-pill" data-filter="early access">Early Access</button>
+        <div class="filter-tabs" role="group" aria-label="Quick topic filters">
+          <button type="button" class="topic-pill is-active" data-filter="">All (10)</button>
+          <button type="button" class="topic-pill" data-filter="November 19">Release Date</button>
+          <button type="button" class="topic-pill" data-filter="PlayStation 5">Platforms</button>
+          <button type="button" class="topic-pill" data-filter="PC">PC</button>
+          <button type="button" class="topic-pill" data-filter="unlock">Unlock Time</button>
+          <button type="button" class="topic-pill" data-filter="cost">Price</button>
+          <button type="button" class="topic-pill" data-filter="preload">Preload &amp; Size</button>
+          <button type="button" class="topic-pill" data-filter="early access">Early Access</button>
+        </div>
       </div>
 
       <div id="answers-grid" class="answers-grid">
-        <!-- Card 1 -->
+        <!-- Card 01 -->
         <article class="answer-card">
-          <div>
-            <h3>When does GTA VI come out?</h3>
-            <p class="answer-body">Thursday, November 19, 2026, worldwide.</p>
+          <div class="answer-top">
+            <span class="answer-num">01</span>
+            <div class="answer-content">
+              <h3>When does GTA VI come out?</h3>
+              <p class="answer-body">Thursday, November 19, 2026, worldwide.</p>
+            </div>
           </div>
           <footer class="answer-footer">
             <span class="check-date">Checked 15 Nov 2026</span>
-            <span class="status-note">Status: Confirmed by Rockstar.</span>
+            <span class="status-note confirmed">Status: Confirmed by Rockstar.</span>
           </footer>
         </article>
 
-        <!-- Card 2 -->
+        <!-- Card 02 -->
         <article class="answer-card">
-          <div>
-            <h3>What can I play it on?</h3>
-            <p class="answer-body">PlayStation 5 and Xbox Series X|S only at launch. There is no PlayStation 4 or Xbox One version.</p>
+          <div class="answer-top">
+            <span class="answer-num">02</span>
+            <div class="answer-content">
+              <h3>What can I play it on?</h3>
+              <p class="answer-body">PlayStation 5 and Xbox Series X|S only at launch. There is no PlayStation 4 or Xbox One version.</p>
+            </div>
           </div>
           <footer class="answer-footer">
             <span class="check-date">Checked 15 Nov 2026</span>
-            <span class="status-note">Status: Confirmed by Rockstar.</span>
+            <span class="status-note confirmed">Status: Confirmed by Rockstar.</span>
           </footer>
         </article>
 
-        <!-- Card 3 -->
+        <!-- Card 03 -->
         <article class="answer-card">
-          <div>
-            <h3>Is it coming to PC?</h3>
-            <p class="answer-body">Not at launch. Rockstar has not announced a PC release date.</p>
+          <div class="answer-top">
+            <span class="answer-num">03</span>
+            <div class="answer-content">
+              <h3>Is it coming to PC?</h3>
+              <p class="answer-body">Not at launch. Rockstar has not announced a PC release date.</p>
+            </div>
           </div>
           <footer class="answer-footer">
             <span class="check-date">Checked 15 Nov 2026</span>
@@ -1206,11 +1286,14 @@
           </footer>
         </article>
 
-        <!-- Card 4 -->
+        <!-- Card 04 -->
         <article class="answer-card">
-          <div>
-            <h3>What time does it unlock?</h3>
-            <p class="answer-body">Digital copies are expected to unlock around midnight local time on November 19, following Rockstar's usual launch pattern. Check your PlayStation or Xbox store page for the exact hour in your region.</p>
+          <div class="answer-top">
+            <span class="answer-num">04</span>
+            <div class="answer-content">
+              <h3>What time does it unlock?</h3>
+              <p class="answer-body">Digital copies are expected to unlock around midnight local time on November 19, following Rockstar's usual launch pattern. Check your PlayStation or Xbox store page for the exact hour in your region.</p>
+            </div>
           </div>
           <footer class="answer-footer">
             <span class="check-date">Checked 15 Nov 2026</span>
@@ -1218,35 +1301,44 @@
           </footer>
         </article>
 
-        <!-- Card 5 -->
+        <!-- Card 05 -->
         <article class="answer-card">
-          <div>
-            <h3>Where is the game set?</h3>
-            <p class="answer-body">In the state of Leonida, including a return to Vice City.</p>
+          <div class="answer-top">
+            <span class="answer-num">05</span>
+            <div class="answer-content">
+              <h3>Where is the game set?</h3>
+              <p class="answer-body">In the state of Leonida, including a return to Vice City.</p>
+            </div>
           </div>
           <footer class="answer-footer">
             <span class="check-date">Checked 15 Nov 2026</span>
-            <span class="status-note">Status: From Rockstar's official trailers.</span>
+            <span class="status-note confirmed">Status: From Rockstar's official trailers.</span>
           </footer>
         </article>
 
-        <!-- Card 6 -->
+        <!-- Card 06 -->
         <article class="answer-card">
-          <div>
-            <h3>Who are the main characters?</h3>
-            <p class="answer-body">Lucia and her partner Jason, the two leads at the centre of the story.</p>
+          <div class="answer-top">
+            <span class="answer-num">06</span>
+            <div class="answer-content">
+              <h3>Who are the main characters?</h3>
+              <p class="answer-body">Lucia and her partner Jason, the two leads at the centre of the story.</p>
+            </div>
           </div>
           <footer class="answer-footer">
             <span class="check-date">Checked 15 Nov 2026</span>
-            <span class="status-note">Status: From Rockstar's official trailers.</span>
+            <span class="status-note confirmed">Status: From Rockstar's official trailers.</span>
           </footer>
         </article>
 
-        <!-- Card 7 -->
+        <!-- Card 07 -->
         <article class="answer-card">
-          <div>
-            <h3>How much will it cost?</h3>
-            <p class="answer-body">The standard edition is widely reported at $79.99. Rockstar had not put the price on its own site when this page was checked, so confirm on your store before launch night.</p>
+          <div class="answer-top">
+            <span class="answer-num">07</span>
+            <div class="answer-content">
+              <h3>How much will it cost?</h3>
+              <p class="answer-body">The standard edition is widely reported at $79.99. Rockstar had not put the price on its own site when this page was checked, so confirm on your store before launch night.</p>
+            </div>
           </div>
           <footer class="answer-footer">
             <span class="check-date">Checked 15 Nov 2026</span>
@@ -1254,11 +1346,14 @@
           </footer>
         </article>
 
-        <!-- Card 8 -->
+        <!-- Card 08 -->
         <article class="answer-card">
-          <div>
-            <h3>How big is the download, and when does preload open?</h3>
-            <p class="answer-body">The file size had not been confirmed when this page was checked. Preload typically opens a few days before launch for digital pre-orders, so keep an eye on your library.</p>
+          <div class="answer-top">
+            <span class="answer-num">08</span>
+            <div class="answer-content">
+              <h3>How big is the download, and when does preload open?</h3>
+              <p class="answer-body">The file size had not been confirmed when this page was checked. Preload typically opens a few days before launch for digital pre-orders, so keep an eye on your library.</p>
+            </div>
           </div>
           <footer class="answer-footer">
             <span class="check-date">Checked 15 Nov 2026</span>
@@ -1266,11 +1361,14 @@
           </footer>
         </article>
 
-        <!-- Card 9 -->
+        <!-- Card 09 -->
         <article class="answer-card">
-          <div>
-            <h3>Is there early access?</h3>
-            <p class="answer-body">No early access edition had been announced when this page was checked. Everyone starts on November 19.</p>
+          <div class="answer-top">
+            <span class="answer-num">09</span>
+            <div class="answer-content">
+              <h3>Is there early access?</h3>
+              <p class="answer-body">No early access edition had been announced when this page was checked. Everyone starts on November 19.</p>
+            </div>
           </div>
           <footer class="answer-footer">
             <span class="check-date">Checked 15 Nov 2026</span>
@@ -1280,9 +1378,12 @@
 
         <!-- Card 10 -->
         <article class="answer-card">
-          <div>
-            <h3>Will there be an online mode?</h3>
-            <p class="answer-body">Rockstar has not detailed the online side of GTA VI yet. The launch is built around the story mode.</p>
+          <div class="answer-top">
+            <span class="answer-num">10</span>
+            <div class="answer-content">
+              <h3>Will there be an online mode?</h3>
+              <p class="answer-body">Rockstar has not detailed the online side of GTA VI yet. The launch is built around the story mode.</p>
+            </div>
           </div>
           <footer class="answer-footer">
             <span class="check-date">Checked 15 Nov 2026</span>
@@ -1291,7 +1392,7 @@
         </article>
       </div>
 
-      <!-- Empty Search State (Feature 6) -->
+      <!-- Empty Search State -->
       <div id="empty-search-state" class="empty-search-state" hidden>
         <p class="empty-search-title">No answer matches yet</p>
         <p class="empty-search-sub">Try searching for release date, price, PC, preload, Leonida, Vice City, or platforms.</p>
@@ -1299,19 +1400,18 @@
       </div>
 
       <noscript>
-        <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.9rem;">
-          All 10 Grand Theft Auto VI launch questions and answers are displayed directly above without requiring JavaScript.
+        <p style="margin-top: 16px; color: var(--text-secondary); font-size: 0.88rem;">
+          All 10 Grand Theft Auto VI launch questions and answers are rendered directly in HTML above.
         </p>
       </noscript>
     </section>
 
-    <!-- Platform Strip Section (Feature 8) -->
-    <section class="section" aria-labelledby="platforms-heading">
-      <div class="section-header">
-        <span class="section-eyebrow">Official Store Search</span>
-        <h2 id="platforms-heading">GTA 6 Platforms at Launch</h2>
-        <p class="section-lead">
-          Grand Theft Auto VI launches on PlayStation 5 and Xbox Series X|S. Check your regional console store for digital edition listings and local unlock hours.
+    <!-- Platform Strip Section -->
+    <section id="platforms" class="section" aria-labelledby="platforms-heading">
+      <div class="section-head">
+        <h2 id="platforms-heading">Console Store Pages</h2>
+        <p class="section-desc">
+          Direct links to search Grand Theft Auto VI on PlayStation 5 and Xbox Series X|S stores (plain links, no affiliate tags).
         </p>
       </div>
 
@@ -1324,9 +1424,9 @@
         >
           <div>
             <span class="platform-name">PlayStation 5</span>
-            <span class="platform-sub">Search GTA VI on PlayStation Store</span>
+            <span class="platform-sub">PlayStation Store — Search GTA VI</span>
           </div>
-          <span class="platform-arrow" aria-hidden="true">↗</span>
+          <span class="platform-arrow" aria-hidden="true">Store ↗</span>
         </a>
 
         <a
@@ -1337,33 +1437,65 @@
         >
           <div>
             <span class="platform-name">Xbox Series X|S</span>
-            <span class="platform-sub">Search GTA VI on Xbox Store</span>
+            <span class="platform-sub">Xbox Store — Search GTA VI</span>
           </div>
-          <span class="platform-arrow" aria-hidden="true">↗</span>
+          <span class="platform-arrow" aria-hidden="true">Store ↗</span>
         </a>
       </div>
     </section>
 
-    <!-- Channel CTA Section (Feature 9) -->
-    <section class="section" aria-labelledby="cta-heading">
-      <div class="cta-box">
-        <span class="section-eyebrow">Lamplit Breakdown</span>
-        <h2 id="cta-heading" style="margin-bottom: 18px;">The Story Behind the 13-Year Wait</h2>
+    <!-- Bottom Lamplit Details & Links + Legal Footer -->
+    <footer id="lamplit" class="bottom-publisher-section" aria-labelledby="publisher-heading">
+      <div class="publisher-card">
+        <div class="publisher-top">
+          <div class="publisher-brand">
+            <span class="publisher-logo" aria-hidden="true">L</span>
+            <div>
+              <h2 id="publisher-heading" class="publisher-title">Lamplit</h2>
+              <span class="publisher-handle">Video Essays &amp; Gaming Breakdowns</span>
+            </div>
+          </div>
+
+          <div class="publisher-links" aria-label="Lamplit links">
+            <a
+              class="publisher-link-item"
+              href="https://www.youtube.com/channel/UCuQe1HBp3wTwYS6ad5IwYtQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>YouTube Channel ↗</span>
+            </a>
+            <a
+              class="publisher-link-item"
+              href="https://www.youtube.com/channel/UCuQe1HBp3wTwYS6ad5IwYtQ/videos"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Latest Videos ↗</span>
+            </a>
+            <a
+              class="publisher-link-item"
+              href="https://www.youtube.com/channel/UCuQe1HBp3wTwYS6ad5IwYtQ?sub_confirmation=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Subscribe ↗</span>
+            </a>
+          </div>
+        </div>
+
         <a
-          class="btn-cta-gradient"
+          class="btn-cta-channel"
           href="https://www.youtube.com/channel/UCuQe1HBp3wTwYS6ad5IwYtQ"
           target="_blank"
           rel="noopener noreferrer"
         >
           <span>Watch Lamplit on YouTube</span>
-          <span aria-hidden="true">▶</span>
+          <span aria-hidden="true">→</span>
         </a>
         <p class="cta-subline">Why did GTA VI take 13 years? Our short video breaks it down.</p>
       </div>
-    </section>
 
-    <!-- Legal Footer (Feature 10 & Section 7) -->
-    <footer class="site-footer">
       <p class="legal-text">Fan-made page by Lamplit. Not affiliated with Rockstar Games or Take-Two Interactive. Some links on this page may be affiliate links. Answers checked 15 November 2026 and marked where a detail is still unconfirmed.</p>
     </footer>
   </main>
@@ -1400,9 +1532,6 @@
         var str = String(val);
         if (el.textContent !== str) {
           el.textContent = str;
-          el.classList.remove('tick');
-          void el.offsetWidth;
-          el.classList.add('tick');
         }
       }
 
@@ -1422,7 +1551,7 @@
           updateDigit(cdMinutes, 0);
           updateDigit(cdSeconds, 0);
           if (stickyTimer) {
-            stickyTimer.textContent = '0d 0h 0m 0s — Out now';
+            stickyTimer.textContent = '0d 0h 0m 0s';
           }
           return;
         }
@@ -1446,7 +1575,7 @@
       tickCountdown();
       setInterval(tickCountdown, 1000);
 
-      // 3. Sticky Mini Countdown Bar Visibility on Scroll
+      // 3. Sticky Mini Countdown Visibility on Scroll
       var heroSection = document.getElementById('hero-section');
       var stickyBar = document.getElementById('sticky-bar');
       if (heroSection && stickyBar && 'IntersectionObserver' in window) {
@@ -1494,7 +1623,6 @@
       }
 
       function getCityMidnightMoment(timeZone) {
-        // Target wall clock: 2026-11-19 00:00:00 in `timeZone`
         var targetWallAsUtc = Date.UTC(2026, 10, 19, 0, 0, 0);
         var firstOffset = getTzOffsetMs(timeZone, targetWallAsUtc);
         var firstEstimate = targetWallAsUtc - firstOffset;
@@ -1607,26 +1735,6 @@
           filterCards(filterVal);
         });
       });
-
-      // 6. Subtle Scroll Fade-in on Answer Cards
-      if ('IntersectionObserver' in window) {
-        var cardObserver = new IntersectionObserver(
-          function (entries, observer) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.08 }
-        );
-
-        cards.forEach(function (card) {
-          card.classList.add('fade-ready');
-          cardObserver.observe(card);
-        });
-      }
     })();
   </script>
 </body>
